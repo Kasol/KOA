@@ -7,6 +7,7 @@ const bodyParse=require('koa-bodyparser');
 const controller=require('./controller');
 const isProduction = process.env.NODE_ENV === 'production';
 
+console.warn(`This is app.js and process id is ${process.pid},title is ${process.title}`);
 
 app=new Koa();
 //记录路由和访问时间
@@ -35,6 +36,8 @@ app.use(controller());
 
 app.listen(3000);
 console.log('server is running at 127.0.0.1:3000');
+// console.log(process.env.NODE_ENV);
+
 
 
 

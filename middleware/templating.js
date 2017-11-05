@@ -1,5 +1,5 @@
 const nunjucks = require('nunjucks');
-
+console.warn(`This is templating.js and process id is ${process.pid},title is ${process.title}`);
 function createEnv(path, opts) {
     var
         autoescape = opts.autoescape === undefined ? true : opts.autoescape,
@@ -7,7 +7,7 @@ function createEnv(path, opts) {
         watch = opts.watch || false,
         throwOnUndefined = opts.throwOnUndefined || false,
         env = new nunjucks.Environment(
-            new nunjucks.FileSystemLoader(path || 'views', {
+            new nunjucks.FileSystemLoader(path || 'views', {//默认指定views文件夹为模版文件夹
                 noCache: noCache,
                 watch: watch,
             }), {

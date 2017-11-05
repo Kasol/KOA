@@ -1,4 +1,5 @@
 const fs = require('fs');
+console.warn(`This is controller.js and process id is ${process.pid},title is ${process.title}`);
 
 function addMapping(router, mapping) {
     for (var url in mapping) {
